@@ -1,17 +1,19 @@
 K = int(input())
 
+# これがないとTLE食らう
+if K % 2 == 0 or K % 5 == 0:
+    print(-1)
+    exit()
+
+# ai = (ai*10 + 7) % Kをr=にするとくそ遅くなる
 res = -1
-count = 1
-sum = 7
-prev = []
-r = sum % K
-while(r not in prev):
-    prev.append(r)
-    sum = sum * 10 + 7
-    r = sum % K
-    if(r == 0):
-        res = count+1
-        break
+count = 0
+ai = 0
+while(True):
+    ai = (ai*10 + 7) % K
     count += 1
+    if(ai == 0):
+        res = count
+        break
 
 print(res)
