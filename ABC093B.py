@@ -1,4 +1,5 @@
-a, b, k = map(int, input().split())
-r = range(a, b+1)
-for i in sorted(set(r[:k]) | set(r[-k:])):
-    print(i)
+A, B, K = map(int, input().split())
+r = range(A, B+1)
+
+for s in sorted(set(r[:K]) | set(r[-K:])):
+    print(s)
