@@ -1,7 +1,7 @@
-n = int(input())
+R, C, K = map(int, input().split())
+V = [[0]*C for i in range(R)]
 
-s = ''
-while(n != 0):
-    s = str(n % 2)+s
-    n = -(n//2)
-print(0 if(s == "") else s)
+for i in range(K):
+    r, c, v = map(int, input().split())
+    V[r-1][c-1] = v
+print(V)
