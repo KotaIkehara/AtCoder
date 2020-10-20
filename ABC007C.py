@@ -20,9 +20,7 @@ def bfs(y, x, d):
         if(y == gy and gx == x):  # Arrived at the goal
             print(d)
             exit()
-        if(L[y-1][x-1] == "#"):  # Visited
-            continue
-        if(y == 1 or y == R or x == 1 or x == C):
+        if(L[y-1][x-1] == "#"):  # Visited/Wall
             continue
         for dy, dx in dydx:
             if(L[y+dy-1][x+dx-1] != "#" and 1 <= y <= R and 1 <= x <= C):
