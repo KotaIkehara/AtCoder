@@ -1,9 +1,17 @@
-N, M = map(int, input().split())
+N = int(input())
+A = [input() for i in range(N)]
 
-if(2*N <= M <= 4*N):
-    y = M % 2
-    z = (M-3*y)//2-(N-y)
-    x = N-(y+z)
-    print(x, y, z)
-else:
-    print(-1, -1, -1)
+mul = [["s", "sh", "ch", "o", "x"], ["f", "fe"],
+       ["a", "i", "u", "e", "o"]]
+
+for a in A:
+    if(a[-1] in mul[0] or a[-2:] in mul[0]):
+        print(a+"es")
+    elif(a[-1] in mul[1]):
+        print(a[:-1] + "ves")
+    elif(a[-2:] in mul[1]):
+        print(a[:-2] + "ves")
+    elif(a[-1] == "y" and a[-2] not in mul[2]):
+        print(a[:-1] + "ies")
+    else:
+        print(a + "s")
