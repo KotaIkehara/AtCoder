@@ -22,7 +22,7 @@
 import os
 L = ["ABC", "ARC", "AGC"]
 
-os.chdir(r"C:\Users\ikehara\Desktop\AtCoder")
+os.chdir(r"[Your Target Path]") #ex) C:\Users\UserName\AtCoder
 files = os.listdir()
 
 for file in files:
