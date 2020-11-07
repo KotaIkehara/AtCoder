@@ -28,5 +28,6 @@ files = os.listdir()
 for file in files:
     contest = file[:3]
     num = file[3:6]
-    if(contest in L):
+    if(contest in L and num):
         os.renames(file, contest + "\\" + contest + num + "\\" + file)
+        # print(file)
