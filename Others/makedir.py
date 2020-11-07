@@ -20,8 +20,8 @@
 #        └─ ...
 
 import os
-L = ["ABC", "ARC", "AGC"]
 
+L = ["ABC", "ARC", "AGC"]
 os.chdir(r"C:\Users\ikehara\Desktop\AtCoder")
 files = os.listdir()
 
