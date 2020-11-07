@@ -29,5 +29,4 @@ for file in files:
     contest = file[:3]
     num = file[3:6]
     if(contest in L):
-        print(file)
-    # os.renames(file, contest + "\\" + contest + num + "\\" + file)
+        os.renames(file, contest + "\\" + contest + num + "\\" + file)
