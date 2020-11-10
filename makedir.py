@@ -21,12 +21,8 @@
 
 import os
 
-<<<<<<< HEAD:makedir.py
 L = ["ABC", "ARC", "AGC"]
 os.chdir(r"C:\Users\ikehara\Desktop\AtCoder")
-=======
-os.chdir(r"[Your Target Path]") #ex) C:\Users\UserName\AtCoder
->>>>>>> 0f85696cfbcf6e4400fdf4c1dbb161c98e155d48:Others/makedir.py
 files = os.listdir()
 
 for file in files:
