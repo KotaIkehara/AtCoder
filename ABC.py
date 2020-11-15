@@ -1,35 +1,37 @@
-from collections import defaultdict
-
-K, N = map(int, input().split())
-
-L = []
-for i in range(N):
-    v, w = input().split()
-    L.append((v, w))
+H, W = map(int, input().split())
+S = ["#"*(W+2)] + ["#" + input() + "#" for i in range(H)] + ["#"*(W+2)]
+res = 0
 
 
-for i in range(3**K):
-    res = defaultdict(set)
-    B = [0]*K
-    power3 = 1
-    for j in range(K):
-        B[j] = (i//power3) % 3+1
-        power3 *= 3
-    for num, s in L:
-        flag = True
-        l = 0
-        for n in num:
-            l += B[int(n)-1]
-        if(l != len(s)):
-            flag = False
+def func(x, y):
+    global res
+    if(S[x][y] == "#"):
+        return
+    if(x == H and y == W):
+        res += 1
+    i = 1
+    while(i < W+2-x):
+        if(S[x+i][y] == "#"):
             break
-    if flag:
-        for num, s in L:
-            prev = 0
-            for i, n in enumerate(num):
-                n = int(n)
-                res[n].add(s[prev:prev+B[n-1]])
-                prev += B[n-1]
-        for r in sorted(res):
-            print(*res[r])
-        exit()
+        else:
+            func(x+i, y)
+        i += 1
+    i = 1
+    while(i < H+2-y):
+        if(S[x][y+i] == "#"):
+            break
+        else:
+            func(x, y+i)
+        i += 1
+    i = 1
+    while(i < W+2-x and i < H+2-y):
+        if(S[x+i][y+i] == "#"):
+            break
+        else:
+            func(x+i, y+i)
+        i += 1
+
+
+func(1, 1)
+mod = 10**9 + 7
+print(res % mod)
