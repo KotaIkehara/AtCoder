@@ -1,5 +1,5 @@
 import math
-a,b,c,d,e,f = map(int, input().split())
+a, b, c, d, e, f = map(int, input().split())
 
 water = set()
 for i in range(math.ceil(f/(100*a))+1):
@@ -19,14 +19,14 @@ for i in range(math.ceil(f/c)+1):
             break
 
 max_noudo = 0
-res = [100*a,0]
+res = [100*a, 0]
 for w in water:
     for s in suger:
         if(s+w > f):
             continue
         else:
             noudo = (100*s)/(w+s)
-        if(noudo <=(100*e)/(100+e) and noudo > max_noudo):
+        if(noudo <= (100*e)/(100+e) and noudo > max_noudo):
             max_noudo = noudo
             res = [w+s, s]
 print(*res)
