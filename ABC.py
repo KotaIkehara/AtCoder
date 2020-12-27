@@ -1,95 +1,70 @@
-from sys import stdin
-from collections import defaultdict
+import queue
 
-def read_step1(s):
-    l = s.split()
-    return l[0], int(l[1]), int(l[2]), int(l[3])
+H, W = map(int, input().split())
+M = [list(input()) for i in range(H)]
 
-def read_menu(M):
-    # Menu = {料理番号1:[在庫数, 価格], 料理番号2:[在庫数, 価格], ..., 料理番号M:[在庫数, 価格]}
-    Menu = defaultdict(int)
-    for i in range(M):
-        # 料理番号，初期在庫数，価格
-        D,S,P = map(int, input().split())
-        Menu[D] = [S,P]
-    return Menu
+dxdy = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
-def step1():
-    M = int(input())
-    Menu = read_menu(M)
+for h in range(H):
+    for w in range(W):
+        if(M[h][w] == 'S'):
+            sh = h
+            sw = w
+        if(M[h][w] == 'G'):
+            gh = h
+            gw = w
 
-    for line in stdin:
-        order, T, D, N = read_step1(line)
-        stock, price = Menu[D]
-        if(stock < N):
-            print("sold out", T)
+dist = [[-1]*W for _ in range(H)]
+prev_x = [[-1]*W for _ in range(H)]
+prev_y = [[-1]*W for _ in range(H)]
+
+
+def bfs(G):
+    Q = queue.Queue()
+    Q.put((sh, sw))
+    dist[sh][sw] = 0
+    while not Q.empty():
+        v = Q.get()
+        h, w = v
+        for dx, dy in dxdy:
+            nh = h + dx
+            nw = w + dy
+            if(nh < 0 or nh >= H or nw < 0 or nw >= W):
+                continue
+            if(G[nh][nw] == '#'):
+                continue
+            if(dist[nh][nw] == -1):
+                Q.put((nh, nw))
+                dist[nh][nw] = dist[h][w] + 1
+                prev_x[nh][nw] = h
+                prev_y[nh][nw] = w
+
+
+bfs(M)
+for h in range(H):
+    for w in range(W):
+        if(M[h][w] != '.'):
+            print('%2s ' % M[h][w], end="")
         else:
-            for i in range(N):
-                print("received order", T, D)
-            Menu[D][0] -= N
+            print('%2d ' % dist[h][w], end="")
+    print()
+print()
 
-def step2():
-    M, K = map(int, input().split())
-    Menu = read_menu(M)
-   
-    cooking = []
-    waiting = []
+h = gh
+w = gw
+while(h != -1 and w != -1):
+    M[h][w] = 'o'
 
-    for line in stdin:
-        l = line.split()
-        instruction = l[0]
-        if(instruction  == "complete"):
-            D = int(l[1])
-        elif(instruction  == "received"):
-            T, D = int(l[2]), int(l[3])
-        elif(instruction  == "sold"):
-            continue
+    # 以下の実装だとwの値が変わってしまうので注意
+    # h = prev_x[h][w]
+    # w = prev_y[h][w]
 
-        if(instruction == "received" and  len(cooking) < K):
-            print(D)
-            cooking.append(D)
-        elif(instruction == "received" and  len(cooking) == K):
-            print("wait")
-            waiting.append(D)
-        elif(instruction == "complete" and D in cooking and len(waiting) > 0):
-            print("ok", waiting[0])
-            cooking.remove(D)
-            cooking.append(waiting[0])
-            waiting.pop(0)
-        elif(instruction == "complete" and D in cooking and len(waiting) == 0):
-            print("ok")
-            cooking.remove(D)
-        else:
-            print("unexpected input")
+    ph = prev_x[h][w]
+    pw = prev_y[h][w]
+    h = ph
+    w = pw
 
-# 完成した料理をスタッフが運べるようにする
-def step3():
-    M = int(input())
-    Menu = read_menu(M)
-
-    waiting = []
-    for line in stdin:
-        l = line.split()
-        instruction = l[0]
-        if(instruction  == "complete"):
-            D = int(l[1])
-        if(instruction == "received"):
-            T, D = int(l[2]), int(l[3])
-            waiting.append([T,D])
-        
-        for i in range(len(waiting)):
-            if(waiting[i][1] == D):
-                print("ready", waiting[i][0], D)
-                waiting.pop(i)
-        
-
-
-
-step = int(input())
-
-if(step == 1):
-    step1()
-elif(step == 2):
-    step2()
-elif(step == 3):
-    step3()
+for h in range(H):
+    for w in range(W):
+        print('%2s ' % M[h][w], end="")
+    print()
