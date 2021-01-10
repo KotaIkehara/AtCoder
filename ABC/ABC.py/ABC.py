@@ -1,5 +1,3 @@
-S = 0
-for i in range(1, 10):
-    for j in range(1, 10):
-        S += i*j
-print(S)
+R, C = map(int, input().split())
+A = list(map(int, input().split()) for _ in range(R))
+print(A)
