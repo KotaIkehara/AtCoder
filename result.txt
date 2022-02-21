@@ -1,0 +1,137 @@
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-01 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 48.972494
+m_max = 20
+Construction time of Mapping Operator: 0.331920
+
+#Threshold: 1.00e-01 Thread: 40, gamma: 1.000000
+SCICCG 20 5026 23.836837
+
+#Threshold: 1.00e-01 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 20 5018 26.021272
+
+--- Average ---
+Ave. SCICCG 20 5022.000000 24.929054
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-02 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 49.077436
+m_max = 20
+Construction time of Mapping Operator: 0.269434
+
+#Threshold: 1.00e-02 Thread: 40, gamma: 1.000000
+SCICCG 20 5026 23.575842
+
+#Threshold: 1.00e-02 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 20 5018 24.510777
+
+--- Average ---
+Ave. SCICCG 20 5022.000000 24.043309
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-03 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 57.104390
+m_max = 20
+Construction time of Mapping Operator: 0.275744
+
+#Threshold: 1.00e-03 Thread: 40, gamma: 1.000000
+SCICCG 20 5026 24.653204
+
+#Threshold: 1.00e-03 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 20 5018 24.805249
+
+--- Average ---
+Ave. SCICCG 20 5022.000000 24.729226
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-04 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 58.402491
+m_max = 20
+Construction time of Mapping Operator: 0.276602
+
+#Threshold: 1.00e-04 Thread: 40, gamma: 1.000000
+SCICCG 20 5026 23.884462
+
+#Threshold: 1.00e-04 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 20 5018 24.746523
+
+--- Average ---
+Ave. SCICCG 20 5022.000000 24.315493
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-05 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 57.813447
+m_max = 20
+Construction time of Mapping Operator: 0.282981
+
+#Threshold: 1.00e-05 Thread: 40, gamma: 1.000000
+SCICCG 20 5026 24.064555
+
+#Threshold: 1.00e-05 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 20 5018 25.228004
+
+--- Average ---
+Ave. SCICCG 20 5022.000000 24.646280
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-06 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 52.078998
+m_max = 16
+Construction time of Mapping Operator: 0.270343
+
+#Threshold: 1.00e-06 Thread: 40, gamma: 1.000000
+SCICCG 16 7629 33.945583
+
+#Threshold: 1.00e-06 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 16 7621 35.330485
+
+--- Average ---
+Ave. SCICCG 16 7625.000000 34.638034
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-07 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 57.173510
+m_max = 6
+Construction time of Mapping Operator: 0.271197
+
+#Threshold: 1.00e-07 Thread: 40, gamma: 1.000000
+SCICCG 6 12995 47.358635
+
+#Threshold: 1.00e-07 Thread: 40, gamma: 1.000000
+
+Deflation converged
+DICCG 6 12991 50.495563
+
+--- Average ---
+Ave. SCICCG 6 12993.000000 48.927099
+matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-08 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 48.759101
+Error: No error vector sampled. theta is too small.matrix file path: mtx/af_0_k101.mtx
+
+#Threshold: 1.00e-09 Thread: 40, gamma: 1.000000
+
+ICCG - 16157 48.606912
+Error: No error vector sampled. theta is too small.
